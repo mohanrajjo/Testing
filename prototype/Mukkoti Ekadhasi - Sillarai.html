@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukkoti Ekadhasi - Sillarai</title>
+
+    <link rel="stylesheet" type="text/css" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/slick-theme.css"/>
+
+    <link href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/css.css" rel="stylesheet">
+<link href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/css_002.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/bootstrap.css">
+    <link rel="stylesheet" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/font-awesome.css">
+    <link rel="stylesheet" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/Chart.css">
+    <link rel="stylesheet" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/dataTables.css">
+    <link rel="stylesheet" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/site.css">
+
+    
+    <link rel="stylesheet" href="Mukkoti%20Ekadhasi%20-%20Sillarai_files/semicoln.css">
+
+    <style type="text/css">
+
+        .gpay-card-info-container {
+            padding: 0;
+            position: relative;
+            min-width: 0px !important;
+            height: 40px;
+            min-height: 40px;
+            border-radius: 4px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 1px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            cursor: pointer;
+            border: 0px;
+        }
+
+            .gpay-card-info-container.black,
+            .gpay-card-info-animation-container.black {
+                background-color: #000;
+                box-shadow: none;
+            }
+
+            .gpay-card-info-container.white,
+            .gpay-card-info-animation-container.white {
+                background-color: #fff;
+            }
+
+            .gpay-card-info-container.black.active {
+                background-color: #5f6368;
+            }
+
+            .gpay-card-info-container.black.hover,
+            .gpay-card-info-animation-container.black.hover {
+                background-color: #3c4043;
+            }
+
+            .gpay-card-info-container.white.active {
+                background-color: #fff;
+            }
+
+            .gpay-card-info-container.white.focus {
+                box-shadow: #e8e8e8 0 1px 1px 0, #e8e8e8 0 1px 3px;
+            }
+
+            .gpay-card-info-container.white.hover,
+            .gpay-card-info-animation-container.white.hover {
+                background-color: #f8f8f8;
+            }
+
+        .gpay-card-info-iframe {
+            border: 0;
+            display: block;
+            height: 40px;
+            margin: auto;
+            max-width: none !important;
+            /* width: 240px; */
+        }
+
+        .gpay-card-info-container-fill .gpay-card-info-iframe {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .gpay-card-info-container-fill,
+        .gpay-card-info-container-fill > .gpay-card-info-container {
+            width: 100%;
+            height: inherit;
+        }
+
+            .gpay-card-info-container-fill .gpay-card-info-placeholder-container {
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding-top: 3px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .gpay-card-info-container-fill .gpay-card-info-placeholder-svg-container {
+                position: relative;
+                width: 60%;
+                height: inherit;
+                max-height: 80%;
+                margin-right: -20%;
+            }
+
+                .gpay-card-info-container-fill .gpay-card-info-placeholder-svg-container > svg {
+                    position: absolute;
+                    left: 0;
+                    height: 100%;
+                    max-width: 100%;
+                }
+    </style>
+    <style type="text/css">
+        .gpay-card-info-animation-container {
+            display: flex;
+            width: 100%;
+            position: absolute;
+            z-index: 100;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        .gpay-card-info-placeholder-container {
+            display: flex;
+            width: 0px !important;
+            height: 100%;
+            margin: auto;
+        }
+
+        .gpay-card-info-animated-progress-bar-container {
+            display: flex;
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+        }
+
+        .gpay-card-info-animated-progress-bar {
+            border-radius: 4px 4px 0px 0px;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-name: gpayProgressFill;
+            animation-timing-function: cubic-bezier(0.97, 0.33, 1, 1);
+            background: #caccce;
+            width: 100%;
+            height: 3px;
+            max-height: 3px;
+        }
+
+        .gpay-card-info-animated-progress-bar-indicator {
+            border-radius: 4px 4px 0px 0px;
+            max-width: 20px;
+            min-width: 20px;
+            height: 3px;
+            max-height: 3px;
+            background: linear-gradient(to right, #caccce 30%, #acaeaf 60%);
+            animation-delay: 0.5s;
+            animation-duration: 1.7s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-name: gpayPlaceHolderShimmer;
+        }
+
+        .gpay-card-info-iframe-fade-in {
+            animation-fill-mode: forwards;
+            animation-duration: 0.6s;
+            animation-name: gpayIframeFadeIn;
+        }
+
+        .gpay-card-info-animation-container-fade-out {
+            animation-fill-mode: forwards;
+            animation-duration: 0.6s;
+            animation-name: gpayPlaceHolderFadeOut;
+        }
+
+        .gpay-card-info-animation-gpay-logo {
+            margin: 13px 7px 0px 39px;
+            background-origin: content-box;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 17px;
+            max-height: 17px;
+            max-width: 41px;
+            min-width: 41px;
+        }
+
+            .gpay-card-info-animation-gpay-logo.black {
+                background-image: url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg");
+            }
+
+            .gpay-card-info-animation-gpay-logo.white {
+                background-image: url("https://www.gstatic.com/instantbuy/svg/light_gpay.svg");
+            }
+
+        @keyframes gpayPlaceHolderShimmer {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: calc(100% - 20px);
+            }
+        }
+
+        @keyframes gpayIframeFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes gpayPlaceHolderFadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes gpayProgressFill {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .gpay-card-info-container-fill .gpay-card-info-animation-container {
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gpay-card-info-container-fill .gpay-card-info-animation-gpay-logo {
+            background-position: right;
+            margin: 0 0 0 0;
+            max-width: none;
+            width: 25%;
+            height: inherit;
+            max-height: 50%;
+        }
+
+        #imgdiv {
+            display: none;
+        }
+
+    </style>
+
+
+
+<style type="text/css">
+.gpay-button {
+  background-origin: content-box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 1px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  height: 40px;
+  min-height: 40px;
+  padding: 12px 24px 10px;
+  width: 240px;
+}
+
+.gpay-button.black {
+  background-color: #000;
+  box-shadow: none;
+}
+
+.gpay-button.white {
+  background-color: #fff;
+}
+
+.gpay-button.short, .gpay-button.plain {
+  min-width: 90px;
+  width: 160px;
+}
+
+.gpay-button.black.short, .gpay-button.black.plain {
+  background-image: url(https://www.gstatic.com/instantbuy/svg/dark_gpay.svg);
+}
+
+.gpay-button.white.short, .gpay-button.white.plain {
+  background-image: url(https://www.gstatic.com/instantbuy/svg/light_gpay.svg);
+}
+
+.gpay-button.black.active {
+  background-color: #5f6368;
+}
+
+.gpay-button.black.hover {
+  background-color: #3c4043;
+}
+
+.gpay-button.white.active {
+  background-color: #fff;
+}
+
+.gpay-button.white.focus {
+  box-shadow: #e8e8e8 0 1px 1px 0, #e8e8e8 0 1px 3px;
+}
+
+.gpay-button.white.hover {
+  background-color: #f8f8f8;
+}
+
+.gpay-button-fill, .gpay-button-fill > .gpay-button.white, .gpay-button-fill > .gpay-button.black {
+  width: 100%;
+  height: inherit;
+}
+
+.gpay-button-fill > .gpay-button.white,
+  .gpay-button-fill > .gpay-button.black {
+    padding: 12px 15% 10px;
+}
+
+.gpay-button.donate, .gpay-button.book,
+.gpay-button.checkout,
+.gpay-button.subscribe, .gpay-button.pay,
+.gpay-button.order {
+    padding: 9px 24px;
+}
+
+.gpay-button-fill > .gpay-button.donate,
+.gpay-button-fill > .gpay-button.book,
+.gpay-button-fill > .gpay-button.checkout,
+.gpay-button-fill > .gpay-button.order,
+.gpay-button-fill > .gpay-button.pay,
+.gpay-button-fill > .gpay-button.subscribe {
+    padding: 9px 15%;
+}
+
+</style><style type="text/css">
+    .gpay-button.white.pay.en {
+      background-image: url(https://www.gstatic.com/instantbuy/svg/light/pay/en.svg);
+    }
+
+    .gpay-button.black.pay.en {
+      background-image: url(https://www.gstatic.com/instantbuy/svg/dark/pay/en.svg);
+    }
+
+    .gpay-button.pay.en {
+      min-width: 150px;
+    }
+  </style></head>
+<body style="max-width: 480px;margin-bottom:0" class="mx-auto">
+    <div style="display: none;" id="imgdiv">
+        <img class="help" id="mainhelpimg" src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/achHelperImage.jpeg" alt="" height="55%">
+    </div>
+        <div class="container-fluid m-0 p-0">
+            <main role="main" class="pb-3">
+                
+
+<!-- start edit -->
+
+<style>
+	.accordion-button{
+	border:none!important;
+	text-align:center!important;
+	color:#212529!important;
+	background-color: #fff!important;
+	}
+	.accordion-item {
+    	border: none;
+	}	
+	.campaignInput{
+	margin-bottom:0!important;
+	}
+	.dollar::before{
+         position: absolute;
+         content: "$";
+         font-size: 50px;
+  	 display:contents;
+         }
+          .dollar{
+          text-align: center;
+          }
+	@media screen and (max-width: 450px) {
+		.dollar #total{
+		max-width:250px!important;
+		padding:1px 0px!important;
+		}
+	}
+	@media screen and (max-width: 400px) {
+		.dollar #total{
+		max-width:240px!important;
+		}
+	}
+	@media screen and (max-width: 370px) {
+		.dollar #total{
+		max-width:220px!important;
+		}
+	}
+	@media screen and (max-width: 330px) {
+		.dollar #total{
+		max-width:180px!important;
+		}
+	}
+	@media screen and (max-width: 290px) {
+		.dollar #total{
+		max-width:140px!important;
+		}
+
+    }
+
+    .slick-slide {
+        width: 350px;
+    }
+
+    .slider-nav{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .payment-type-mark{
+        width: 60px;
+    }
+
+    .vid img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .slick-current img {
+        width: 80px;
+    }
+
+</style>
+<!-- end edit -->
+
+
+<!-- 	start edit -->
+   <div class="bg-primary row text-white text-center m-2 p-2" style="margin-bottom: 0!important;">
+        
+    <div class="col-sm-12"> 
+    
+    <div class="text-center">
+                <img src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/202222350d1a7-8f13-44e8-b753-c4c737e904aa" class="img-fluid">   
+      </div>
+    </div>	  
+        <span class="d-none" id="businessName">Sri Lakshmi Ganapathi Temple</span>
+    	<span class="d-none" id="campaignId">71abbbe7-7fe3-4747-af9b-a23612ec16b0</span>
+    	<span class="d-none" id="cardconnectMerchantId">800000000740</span>
+    <hr data-bind="visible:tipsEnabled">
+    </div>
+<!-- end edit -->
+
+<div class="mx-3 px-3">
+
+    <div class="row pt-3 mt-3" style="margin-top:0!important;padding-top:0!important;">
+        
+	    
+
+        <form id="campaign_form" novalidate="novalidate">
+            <div class="bg-light p-4">
+                <div class="row g-4">
+<!--         edit start -->
+                    <div class="col-12" style="margin-top:0">
+
+	    
+			<div class="accordion" id="accordionExample" style="margin-bottom:0px">
+    				<div class="accordion-item">
+        				<h2 class="accordion-header" id="headingOne">
+            				<button id="accordion-button" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					<h1 class="text-center" style="font-size: 170%;margin: 0 auto;">Mukkoti Ekadhasi</h1>
+            				</button>
+        				</h2>
+         				<div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+          					<div class="accordion-body" style="max-height: 150px;overflow-y: scroll;">
+             						Mukkoti Ekadhasi - Uthara Dharshanam
+          					</div>
+         				</div>
+       				</div>  
+    			</div>
+	     	    </div> 
+<!-- 	    edit end -->
+			<div class="col-12" style="margin-top:0">
+                        <div class="form-group" style="text-align:center;">
+<!--                             <label asp-for="Payment.Amount" style="font-size:24px" class="control-label"></label> -->
+                            <div class="dollar">
+                                <input class="campaignInput" style="border: medium none !important; font-size: 60px; text-align: center; max-width: 330px; width: 180px;" id="total" min="1" value="1.00" onkeypress="this.style.width = ((this.value.length +1) * 36) + 'px';" type="text" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." name="Payment.Amount">
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Payment.Amount" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+			
+			<div class="col-12">
+			    
+                        <div class="form-group">
+<!--                             <label asp-for="Payment.CustomerName" class="control-label"></label> -->
+                            <input placeholder="Full Name (required)" class="form-control campaignInput" data-bind="value:name" required="" type="text" data-val="true" data-val-required="The Name field is required." id="Payment_CustomerName" name="Payment.CustomerName">
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Payment.CustomerName" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+<!--                             <label asp-for="Payment.Email" class="control-label"></label> -->
+                            <input placeholder="Email (required)" class="form-control campaignInput" type="email" data-bind="value:email" required="" data-val="true" data-val-required="The Email field is required." id="Payment_Email" name="Payment.Email">
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Payment.Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+<!--                             <label asp-for="Payment.Phone" class="control-label"></label> -->
+                            <input placeholder="Phone" class="form-control campaignInput" data-bind="value:phone" type="text" id="Payment_Phone" name="Payment.Phone">
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Payment.Phone" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+    </div></form>
+
+    <div class="w-100" style="margin-top: 20px;padding-left:0;padding-right:0">
+
+        <div class="slider-nav">
+            <div class="vid w-100"><img class="payment-type-mark" src="google-pay-mark.png"/></div>
+            <div class="vid"><img class="payment-type-mark" src="credit-card-mark.png"/></div>
+            <div class="vid"><img class="payment-type-mark" src="apple-pay-mark.png"/></div> 
+        </div>
+
+        <div id="myCarousel" class="slickcarousel carousel slide" data-bs-pause="true">
+
+            <!-- Wrapper for slides -->
+            <div class="slider slider-single carousel-inner" role="listbox">
+
+                <div class="carousel-item active" id="googleDiv" style="height:357px;">
+                    <div class="formcont" id="gpay-container">
+                        <div class="formdiv" style="height:310px">
+
+                            <center style="margin-top:65px">
+                                <div id="g-pay-container" style="height:310px">
+                                    <div id="gpay-button" style="padding-top:58px;">
+                                </div>
+                                <br>
+                            </center>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item" id="creditDiv">
+                    <div id="credit-card-container">
+                        <div class="formdiv" style="height:310px">
+                            <iframe style="width: 100%;height: 250px;" id="creditTokenFrame" name="tokenFrame" src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/ajax-tokenizer.html" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                        <input id="cardConnectToken" type="hidden">
+                        <center class="pb-3">
+                            <button class="btn btn-dark text-center pay-button" onclick="cardConnectPay()" id="ccPayButton" disabled="disabled" style="font-weight:bold">  Pay  </button>
+                        </center>
+
+                    </div>
+                </div>
+		    
+                <div class="carousel-item" >
+                    <center class="pb-3">
+                        <img src="donate-apple-pay-button.png" width="200" height="50"/>
+                    </center>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div id="qrcode" class="mx-auto mt-3 pt-3 d-print-block d-none" style="width:128px;height:128px">
+            <canvas style="display: none;" width="106" height="106"></canvas>
+        </div>
+        <div class="text-center m-2 p-2">
+            <div class="text-primary" style="font-size:0.75rem">
+                Powered by <a href="https://www.sillarai.com/" target="_blank">Sillarai</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+            </div></main>
+        </div>
+
+        
+
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/jquery.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/jquery_002.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/jquery_004.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/bootstrap.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/knockout-latest.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/knockout.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/Chart.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/jquery_003.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/dataTables.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/invoice.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/site.js"></script>
+
+    
+        <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/axios.js"></script>
+        <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/gpay.js"></script>
+        <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/applePay.js"></script>
+        <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/slick.js"></script>
+    
+
+        <script type="text/javascript">
+
+            $('.slider-single').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+
+          $('.slider-nav').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                asNavFor: '.slider-single',
+                arrows: false,
+                dots: false,
+                centerMode: true,
+                focusOnSelect: true,
+                centerPadding: '95px',
+                slidesToShow: 1
+            });
+        </script>
+
+
+        
+    
+
+
+    <script async="" src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/pay.js" onload="onGooglePayLoaded()"></script>
+
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/apple-pay-sdk.js"></script><iframe src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/payframe.html" style="display: none; visibility: hidden;" allowpaymentrequest="true" width="0" height="0"></iframe>
+
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/easy.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/jquery_005.js"></script>
+    <script src="Mukkoti%20Ekadhasi%20-%20Sillarai_files/semicolnJS.js"></script>
+
+    <script>
+	        document.getElementById("total").style.width = ((document.getElementById("total").value.length +1) * 36) + 'px';
+
+        //semicolnTech
+
+        //WebFont.load({
+        //    google: {
+        //        families: ['Montserrat']
+        //    },
+        //    context: window.frames[0].frameElement.contentWindow,
+        //})
+	    let userAgentString = navigator.userAgent;
+                        let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+                        // 			       let safariAgent =userAgentString.indexOf("Safari") > -1;
+                        // 			       // Discard Safari since it also matches Chrome
+                        // 			        if ((chromeAgent) && (safariAgent))
+                        // 				{
+                        // 					safariAgent = false;
+                        // 				}
+                        // Detect Safari
+                        var safariAgent = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+                        // if it is both mac and safari make apple pay as 1st slide
+                        if ((navigator.appVersion.indexOf("Mac") != -1) && (safariAgent == true)) {
+                            document.getElementById('appleDiv').className = "carousel-item active";
+                        }
+                        // if not safari but mac, remove apple pay
+                        else if (safariAgent == false) {
+                            document.getElementById('appleDiv').remove();
+                            document.getElementById('osSpecificc').remove();
+                            document.getElementById('googleDiv').className = "carousel-item active";
+                        }
+
+        $(document).on('keypress', '.num', function (event) {
+            var keycode = event.which;
+            if (!(event.shiftKey == false && (keycode == 46 || keycode == 8 || keycode == 37 || keycode == 39 || (keycode >= 48 && keycode <= 57)))) {
+                event.preventDefault();
+            }
+            else if (document.getElementsByClassName('card-no').length >= 4) {
+                $(this).next('.card-no').focus();
+            }
+            // if(document.getElementById('cvv').length>=4){
+            //   event.preventDefault();
+            // }
+
+        });
+	    
+
+
+        //semicolnTech
+
+    </script>
+
+    <script>
+            function cardConnectPay() {
+                $.ajax({
+                    url: '/api/payments/cardConnectCampaign',
+                    type: "POST",
+                    data: JSON.stringify(
+                        {
+                            Name: document.getElementById('Payment_CustomerName').value,
+                            Phone: document.getElementById('Payment_Phone').value,
+                            Email: document.getElementById('Payment_Email').value,
+                            CampaignId: '71abbbe7-7fe3-4747-af9b-a23612ec16b0',
+                            Token: document.getElementById('cardConnectToken').value,
+                            Amount: document.getElementById('total').value
+                        },
+                    ),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        window.location = 'https://sillarai-dev.azurewebsites.net/Customers/CampaignThankYou' + '?id='+result.donationId;
+                    }
+                });
+            }
+
+		window.addEventListener('message', function (event) {
+
+			if (event.origin.indexOf('cardconnect.com') <= 0)
+				return;
+
+			var token = JSON.parse(event.data);
+			var cardConnectToken = document.getElementById('cardConnectToken');
+			cardConnectToken.value = token.message;
+			$('#ccPayButton').removeAttr('disabled');
+			$('#ccPayButton').html('Click to Pay');
+		}, false);
+
+		var updatePayContainers = function () {
+
+			var selectedValue = $('.payMarks input[type="radio"]:checked').val();
+			$('#pay_buttons > div').addClass('d-none');
+
+			if (selectedValue === 'applePay') {
+				$('#apple-pay-container').removeClass('d-none');
+			} else if (selectedValue === 'gPay') {
+				$('#g-pay-container').removeClass('d-none');
+			} else if (selectedValue === 'creditCard') {
+				$('#credit-card-container').removeClass('d-none');
+			} else if (selectedValue === 'ach') {
+				$('#ach-container').removeClass('d-none');
+			}
+
+		};
+
+		$(document).ready(function () {
+
+			if (!window.ApplePaySession) {
+				$('.applePayUiElement').remove();
+			}
+
+			$('.payMarks .row').on('click', function (anEvent) {
+				$(anEvent.currentTarget).find('input.form-check-input').prop('checked', true);
+				updatePayContainers();
+			});
+
+			$('.payMarks input[type="radio"]').on('change', updatePayContainers);
+
+			$('.payMarks input[type="radio"]:first').prop('checked', true);
+
+			updatePayContainers();
+		});
+
+    </script>
+
+
+
+
+</body></html>

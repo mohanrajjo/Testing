@@ -1,0 +1,215 @@
+﻿.btn-primary {
+    color: white;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+}
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+dd {
+    padding-left: 1em;
+}
+
+samp {
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 768px) {
+
+    .invoice-description {
+        overflow: scroll;
+        max-height: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dataTables_info, .dataTables_length {
+        display: none;
+    }
+}
+
+#customersTable_filter input, #invoicesTable_filter input, #reportsTable_filter input {
+    min-width: 400px
+}
+
+.slick-arrow.slick-prev:before, .slick-arrow.slick-next:before {
+    color: #FF4500;
+}
+
+.slick-arrow.slick-prev, .slick-arrow.slick-next{
+    position:relative;
+    top:45px;
+}
+
+.payMarks .form-check {
+    padding: 5px;
+}
+
+
+.payMarks img {
+    width: 4rem;
+}
+
+.payMarks input {
+    width:20px;
+    height:20px;
+}
+
+.payMarks .pay-label {
+    font-size: large;
+}
+.payMarks .row {
+    cursor:pointer;
+}
+
+#pay_buttons {
+/*    height: 250px;
+*/
+}
+
+.pay-button, .gpay-button {
+    width: 287px;
+}
+
+#ach-header {
+    text-decoration-line : none;
+}
+
+input[type=number].no-spinner::-webkit-inner-spin-button, input[type=number].no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body.body-with-menu {
+    margin-top: 100px;
+    margin-bottom: 175px;
+}
+
+footer {
+    /*line-height: 60px;*/
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /*    line-height: 60px; 
+*/ /* Vertically center the text there */
+}
+
+/*#g-pay-container .gpay-button {
+    width: 100%;
+}
+*/
+/*#g-pay-container > div {
+    width: 100% !important;
+}
+.gpay-card-info-container {
+    width: 100% !important;
+}
+*/
+
+#applePay-button {
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-type: buy;
+}
+
+.btn-pay {
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    width: 240px;
+    height:40px;
+}
+
+#ach-placeholder-image {
+    position:relative;
+    top:-121px;
+    left:5px;
+    z-index:-50;
+}
+.copy-right {
+    text-align: center;
+    background-color: #454545;
+    padding: 5px 0
+}
+
+.copy-right ul li {
+    display: inline-block
+}
+
+.copy-right ul li a {
+    color: #fff;
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 20px
+}
+
+.copy-right p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px
+}
+
+.header-sec {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff
+}
+
+.header-sec .navbar .navbar-brand {
+    width: 200px
+}
+
+.header-sec .navbar-nav .nav-link {
+    color: #000;
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px;
+    text-transform: capitalize;
+    margin-left: 2px;
+    font-family: 'exo 2',sans-serif;
+    transition: all .5s ease
+}
+
+.header-sec .navbar-nav .nav-link:hover {
+    background-color: #ff4500;
+    color: #fff
+}
+
+.header-sec .navbar-nav .nav-link.active {
+    background-color: #ff4500;
+    color: #fff
+}
